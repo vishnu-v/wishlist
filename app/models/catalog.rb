@@ -20,11 +20,11 @@ class Catalog < ActiveRecord::Base
 	end
 
 	def effective_price(site_id)
-		self.amount - self.contributions.select{|c| c.site_id == site_id}.map(&:amount).inject(:+).to_f
+		self.price - self.contributions.select{|c| c.site_id == site_id}.map(&:amount).inject(:+).to_f
 	end
 
 	def contribution_percentage(site_id)
-		(100 - ((self.effective_price/self.amount)*100).to_f
+		(100 - ((self.effective_price(site_id)/self.price)*100)).to_f
 	end
 
 	def catalog_already_purchased(site_id)

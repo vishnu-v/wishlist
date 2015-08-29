@@ -1,10 +1,9 @@
 <div class="search section">
   <div class="row">
     <div class="col s12 m12">
-      <% @search_results = (0..20).map{{}}  # load dynamically from server %>
-    <% if @search_results.present? %>
+    <% if @catalogs.present? %>
       <ul class='items row'>
-        <% @search_results.each do |item|%>
+        <% @catalogs.each do |item|%>
         <li class='item col s12 m6 l4'>
           <%= render :partial => 'shared/product', :locals => {:product => item} %>
         </li>
