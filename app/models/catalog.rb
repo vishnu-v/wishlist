@@ -9,20 +9,14 @@ class Catalog < ActiveRecord::Base
 		end
 	end
 
-	def contribute(site_id,amount,guest_id,message)
-		if (contribution = Contribution.all(:conditions => ["catalalog_id = ? AND site_id = ? AND guest_id = ?",self.id,site_id,guest_id])).present?
-			contribution = contribution.last
-			contribution.amount += amount
-			contribution.message = message
-			contribution.save
-		else
-			Contribution.create({
-				:catalalog_id => self.id,
-				:site_id => site_id,
-				:amount => amount,
-				:message => message
-			})
-		end
+	def contribute(site_id,guest_id,amount,message)
+		Contribution.create({
+			:catalalog_id => self.id,
+			:site_id => site_id,
+			:guest_id => guest_id,
+			:amount => amount,
+			:message => message
+		})
 	end
 
 	def effective_price(site_id)
