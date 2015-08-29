@@ -21,3 +21,8 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, header 
 .icon-block .material-icons {
   font-size: inherit;
 }
+@media only screen and (min-width: 993px){
+#content .right .input-field label{
+  top: 3rem;
+}
+}

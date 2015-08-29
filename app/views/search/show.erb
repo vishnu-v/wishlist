@@ -1,14 +1,18 @@
 <div class="search section">
   <div class="row">
     <div class="col s12 m12">
-      <% @search_results = [{}] # load dynamically from server %>
-  <% if @search_results.present? %>
-    <% @search_results.each do |item|%>
-      <%= render :partial => 'shared/product', :locals => {:product => item} %>
+      <% @search_results = (0..20).map{{}}  # load dynamically from server %>
+    <% if @search_results.present? %>
+      <ul class='items row'>
+        <% @search_results.each do |item|%>
+        <li class='item col s12 m6 l4'>
+          <%= render :partial => 'shared/product', :locals => {:product => item} %>
+        </li>
+        <% end %>
+      </ul>
+    <% else %>
+    No Results found
     <% end %>
-  <% else %>
-  No Results found
-  <% end %>
     </div>
   </div>
 </div>
