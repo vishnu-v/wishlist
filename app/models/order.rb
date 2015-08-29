@@ -28,4 +28,5 @@ class Order < ActiveRecord::Base
 		
 		cat.save
 	end
+
 end
