@@ -6,4 +6,6 @@ $(function(){
   .on('click', '.action > .buy', function(){
     alert('Item bought');
   });
+  $('.button-collapse').sideNav({menuWidth: 200});
+  $('.modal-trigger').leanModal();
 });

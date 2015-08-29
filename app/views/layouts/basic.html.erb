@@ -3,42 +3,83 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-<title>Starter Template - Materialize</title>
+<title>Wishlist</title>
 
-<!-- CSS  -->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="/stylesheets/site.css" rel="stylesheet" media="screen,projection">
 <link href="/stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="/stylesheets/slick.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="/stylesheets/slick-theme.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-<nav class="light-blue lighten-1" role="navigation">
-  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="#">Navbar Link</a></li>
-    </ul>
+<header class="grey darken-3 ">
+  <nav class='top-nav hide-on-large-only' role="navigation">
+    <div class='nav-wrapper white'>
+      <a href="#" data-activates="nav-mobile" class="button-collapse black-text hide-on-large-only"><i class="material-icons">menu</i></a>
+      <a href="#" class="brand-logo black-text  hide-on-med-and-down">Wishlist</a>
+    </div>
+    <ul id="nav-mobile" class="side-nav fixed grey darken-3 ">
+      <li id='logo-container' class='grey darken-2'><a href="#" class="brand-logo white-text">Logo </a></li>
+        <li>
+        <form action='#!'>
+          <div class="input-field">
+            <input id="search" type="search" placeholder='search' required='required'>
+            <label for="search"><i class="material-icons left">search</i></label>
+          </div>
+        </form>
+        </li>
+      <li><a class="waves-effect white-text" href="#">Home</a></li>
+      <li><a class="waves-effect white-text" href="#">Our Products</a></li>
+      <li><a class="waves-effect white-text" href="#">About Us</a></li>
+      <li><a class="waves-effect white-text" href="#">Contact Us</a></li>
+      <li><a class="waves-effect white-text" href="#">Gallery</a></li>
+      <li>
 
-    <ul id="nav-mobile" class="side-nav">
-      <li><a href="#">Navbar Link</a></li>
+      <ul class="collapsible white-text" data-collapsible="accordion">
+        <li>
+        <div class="collapsible-header"><i class="material-icons right">place</i>Posts</div>
+        <div class="collapsible-body black-text"><p>Lorem ipsum dolor sit amet.</p></div>
+        </li>
+        <li>
+        <div class="collapsible-header"><i class="material-icons right">whatshot</i>Tweets</div>
+        <div class="collapsible-body black-text"><p>Lorem ipsum dolor sit amet.</p></div>
+        </li>
+      </ul>
+
+      </li>
+      <!--<li class="divider"></li>-->
     </ul>
-    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-  </div>
-</nav>
-<div class="section no-pad-bot" id="index-banner">
-  <div class="container">
-    <br><br>
-    <h1 class="header center orange-text">Wishlist</h1>
-    <div class="row center">
-      <h5 class="header col s12 light">One place to fullfil your wishes</h5>
+  </nav>
+</header>
+<main>
+<div id="content" class='row'>
+  <div class='col s12 m12 l12'>
+    <ul class="right">
+      <li class="left">
+      <form action='#!'>
+        <div class="input-field">
+          <label for="search"><i class="material-icons left">search</i></label>
+          <input id="search" type="search" placeholder='search' required='required'>
+        </div>
+      </form>
+      </li>
+    </ul>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br><br>
+        <h1 class="header center orange-text">Wishlist</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">One place to fullfil your wishes</h5>
+        </div>
+        <div class="row center">
+          <a href="#!" id="get-started" class="btn-large waves-effect waves-light orange">What are you looking for?</a>
+        </div>
+      </div>
     </div>
-    <div class="row center">
-      <a href="#!" id="get-started" class="btn-large waves-effect waves-light orange">What are you looking for?</a>
-    </div>
+    <%= yield %>
   </div>
 </div>
-
-<div class="container">
-  <%= yield %>
-</div>
+</main>
 
 <footer class="page-footer orange">
   <div class="container">
@@ -76,10 +117,9 @@
   </div>
 </footer>
 
-
-<!--  Scripts-->
 <script src="/javascripts/jquery-2.1.1.min.js"></script>
 <script src="/javascripts/materialize.js"></script>
+<script src="/javascripts/slick.min.js"></script>
 <%= javascript_include_tag 'application' %>
 </body>
 </html>

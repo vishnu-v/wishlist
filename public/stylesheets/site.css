@@ -1,7 +1,23 @@
-.product-wrapper{
+header, header .side-nav li, header .side-nav li > a{
+  padding: 0;
 }
-.product-wrapper > .action{
+header .side-nav .collapsible-header{
+  margin: 0;
 }
-.product-wrapper  > .contribute{
+header nav{
+  background-color: #424242;
+  color: black;
 }
-
+header .side-nav li:hover, header .side-nav li.active {
+  background-color: #616161;
+}
+#logo-container{
+  height: 56px;
+}
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, header .side-nav a, header .side-nav .material-icons{
+  height: 56px;
+  line-height: 56px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}

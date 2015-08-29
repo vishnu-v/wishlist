@@ -1,43 +1,53 @@
-<div class="product-wrapper">
-  <div class="image">
-    <img src="#" alt="">
+<div class="product card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="images/office.jpg">
   </div>
-  <div class="desc">
-    lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit 
+  <div class="desc card-content">
+    <span class="card-title activator grey-text text-darken-4">Product title<i class="material-icons right">more_vert</i></span>
+    <p><a href="#">This is a link</a></p>
+    <div class="actions">
+      <a class="button contribute" href="#!">Contribute</a>
+      <a class="button buy" href="#!">Buy</a>
+    </div>
   </div>
-  <div class="status">
-    <div class="ctbn-progress-bar">
-      <div class="ctbn-percent-pledged" style="width: 65.77%"></div>
-    </div>
-    <% if product.contribution_success? %>
-    <div class="ctbn-successful">
-      <strong>Successfully funded!</strong>
-    </div>
-    <% end %>
-    <ul class="ctbn-stats">
-      <li>
-      <div class="ctbn-stats-value">65%</div> <span class="ctbn-stats-label">funded</span>
-      </li>
-      <li>
-      <div class="ctbn-stats-value"><span class="money usd no-code">$49,329</span>
-      </div> <span class="ctbn-stats-label">required</span>
-      </li>
-      <li>
-      <div class="ctbn-stats-value">Funded</div>
-      <span class="ctbn-stats-label">
-      </span>
-      </li>
-      <li class="ksr_page_timer" data-end_time="2015-09-20T09:59:32-04:00">
-      <div class="ctbn-stats-value">
-        <div class="num">22</div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Product title<i class="material-icons right">close</i></span>
+    <p>
+    lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem ipsum sit lorem Here is some more information about this product that is only revealed once clicked on.
+    </p>
+    <div class="status">
+      <div class="ctbn-progress-bar">
+        <div class="ctbn-percent-pledged" style="width: 65.77%"></div>
       </div>
-      <div class="ctbn-stats-label text" data-word="left">days to go</div>
-      </li>
-    </ul>
-  </div>
+      <%# if product.contribution_success? %>
+      <div class="ctbn-successful">
+        <strong>Successfully funded!</strong>
+      </div>
+      <%# end %>
+      <ul class="ctbn-stats">
+        <li>
+        <div class="ctbn-stats-value">65%</div> <span class="ctbn-stats-label">funded</span>
+        </li>
+        <li>
+        <div class="ctbn-stats-value"><span class="money usd no-code">$49,329</span>
+        </div> <span class="ctbn-stats-label">required</span>
+        </li>
+        <li>
+        <div class="ctbn-stats-value">Funded</div>
+        <span class="ctbn-stats-label">
+        </span>
+        </li>
+        <li class="ksr_page_timer" data-end_time="2015-09-20T09:59:32-04:00">
+        <div class="ctbn-stats-value">
+          <div class="num">22</div>
+        </div>
+        <div class="ctbn-stats-label text" data-word="left">days to go</div>
+        </li>
+      </ul>
+    </div>
   <div class="actions">
     <a class="button contribute" href="#!">Contribute</a>
     <a class="button buy" href="#!">Buy</a>
   </div>
+  </div>
 </div>
-
