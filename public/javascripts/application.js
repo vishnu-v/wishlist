@@ -1,2 +1,9 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(function(){
+  $(document)
+  .on('click', '.product-wrapper > .action > .contribute', function(){
+    confirm('Sure to contribute $1000?');
+  })
+  .on('click', '.action > .buy', function(){
+    alert('Item bought');
+  });
+});

@@ -1,0 +1,15 @@
+<div class="search section">
+  <div class="row">
+    <div class="col s12 m12">
+  <% @search_results = [] # load dynamically from server %>
+  <% if @search_results.present? %>
+    <% @search_results.each do |item|%>
+      <%= render :partial => 'shared/item', :locals => {:product => items} %>
+    <% end %>
+  <% else %>
+  No Results found
+  <% end %>
+    </div>
+  </div>
+</div>
+
