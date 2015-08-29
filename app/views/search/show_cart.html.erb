@@ -18,11 +18,17 @@
 	        </tbody>
 	      </table>
 	    </div>
-
+	    <% if @contribution == 'true' %>
+	    	<br/>
+	    	<div class='contribution_amount'><h5>Contribution Amount</h5></div>
+	    	<%= text_field_tag :amount %>
+	    <% else %>
+	    	<%= hidden_field_tag :amount, @catalog.price %>
+	    <% end %>
 	    <div class='wellwisher_details'>
 	    <h1>Wellwisher Details</h1>
 	    <%= hidden_field_tag :cat_id, @catalog.id %>
-	    <%= hidden_field_tag :amount, @contribution || @catalog.price %>
+	    <%= hidden_field_tag :contribution, @contribution %>
 	    <%= label_tag :name %>
 	    <%= text_field_tag :name %>
 	    <%= label_tag :contact %>

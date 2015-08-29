@@ -18,16 +18,16 @@ class SearchController < ApplicationController
   def create_site
     name = params[:name]
     shipping_address = params[:address]
-    Site.create({:name => name,shipping_address => shipping_address})
+    Site.create({:name => name,:shipping_address => shipping_address})
   end
 
   def show_cart
     @catalog = Catalog.find_by_id params[:catalog_id]
-    @contribution = params[:contribution] || nil
+    @contribution = params[:contribution] || false
   end
 
   def buy_catalog
-    amount = params[:amount]
+    amount = params[:amount].to_f
     message = params[:message]
     name = params[:name]
     address = params[:address]
@@ -35,14 +35,15 @@ class SearchController < ApplicationController
 
     guest = Guest.create({
       :name => name,
-      :amount => amount,
       :contact => contact,
       :address => address,
       :site_id => @site.id
     })
 
     cat_id = params[:cat_id]
-    Order.place_order(@site.id,cat_id,guest_id,amount,message,shipping_address)    
+    contribution = params[:contribution]
+    Order.place_order(@site.id,guest.id,cat_id,amount,contribution,message,address)    
+    redirect_to :action => :show
   end
 
 

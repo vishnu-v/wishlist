@@ -5,13 +5,13 @@ class Catalog < ActiveRecord::Base
 
 	def self.add_catalogs(cat_ids,site_id)
 		cat_ids.split(',').each do |cat_id|
-			SiteCatalog.find_or_create_by_site_id_and_cat_id(site_id,cat_id,{:purchased => false})
+			SiteCatalog.add_catalogs(site_id,cat_id)
 		end
 	end
 
 	def contribute(site_id,guest_id,amount,message)
 		Contribution.create({
-			:catalalog_id => self.id,
+			:catalog_id => self.id,
 			:site_id => site_id,
 			:guest_id => guest_id,
 			:amount => amount,
@@ -28,7 +28,7 @@ class Catalog < ActiveRecord::Base
 	end
 
 	def catalog_already_purchased(site_id)
-		(order = Order.find_by_site_id,catalog_id(site_id,self.id)).present? && order.status == 'done'
+		(order = Order.find_by_site_id_and_catalog_id(site_id,self.id)).present? && order.status == 'done'
 	end
 
 	def available?(site_id)
