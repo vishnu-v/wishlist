@@ -1,4 +1,4 @@
 class SiteCatalog < ActiveRecord::Base
-	belongs_to :catalogs
-	belongs_to :sites
+	belongs_to :catalog
+	belongs_to :site
 end
