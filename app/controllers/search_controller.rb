@@ -16,6 +16,11 @@ class SearchController < ApplicationController
   def create_wishlist
   end
 
+  def show_cart
+    @catalog = Catalog.find_by_id params[:catalog_id]
+    @contribution = params[:contribution] || nil
+  end
+
   def buy_catalog
   end
 

@@ -1,0 +1,42 @@
+<% if @catalog %>
+	<h1>Place your order</h1>
+
+	<% form_tag url_for(:action => :buy_catalog) do %>
+		<div class='list-items-wrapper'>
+	      <table>
+	        <thead>
+	          <tr>
+	            <th><%= 'Product Title' %></th>
+	            <th><%= ' Price'%> </th>
+	            <th><%= ' Qty' %></th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr><%= @catalog.title %></tr>
+	          <tr><%= @catalog.price %></tr>
+	          <tr><%= @catalog.quantity %></tr>
+	        </tbody>
+	      </table>
+	    </div>
+
+	    <div class='wellwisher_details'>
+	    <h1>Wellwisher Details</h1>
+	    <%= hidden_field_tag :cat_id, @catalog.id %>
+	    <%= hidden_field_tag :amount, @contribution || @catalog.price %>
+	    <%= label_tag :name %>
+	    <%= text_field_tag :name %>
+	    <%= label_tag :contact %>
+	    <%= text_field_tag :contact %>
+	    <%= label_tag :address %>
+	    <%= text_area_tag :address %>
+	    <%= label_tag :message %>
+	    <%= text_area_tag :message %>
+	    <%= submit_tag "Place order", :class => 'place_order_button' %>
+
+	    </div>
+	<% end %>
+<% else %>
+	<span class="continue_shopping">
+		Continue Shopping
+	</span>
+<% end %>
