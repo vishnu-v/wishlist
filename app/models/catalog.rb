@@ -32,6 +32,6 @@ class Catalog < ActiveRecord::Base
 	end
 
 	def available?(site_id)
-		self.quantity > 0 && self.price > 0.0 && !self.catalog_already_purchased
+		self.quantity > 0 && self.price > 0.0 && !self.catalog_already_purchased(site_id)
 	end
 end
