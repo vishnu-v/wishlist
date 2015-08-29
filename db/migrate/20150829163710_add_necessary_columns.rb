@@ -9,7 +9,6 @@ class AddNecessaryColumns < ActiveRecord::Migration
 
   	remove_column :orders, :cat_id
   	add_column :orders, :catalog_id, :integer
-  	add_column :orders, :status, :string
   	add_column :orders, :contributors, :text
   end
 
