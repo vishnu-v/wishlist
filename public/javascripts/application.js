@@ -15,9 +15,6 @@ $(function(){
   .on('click', '.product .wishlist .remove', function () {
     $(this).closest('.product').removeClass('selected');
   })
-  .on('click', '.product .actions > .contribute', function(){
-    confirm('Sure to contribute $1000?');
-  })
   .on('click', '.product .actions > .buy, .product .actions > .contribute', function(e){
     e.preventDefault();
     $('#cart').openModal();

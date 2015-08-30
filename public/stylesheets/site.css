@@ -40,7 +40,7 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, header 
 }
 .product.card .card-content,
 .product.card .card-reveal {
-    padding-bottom: 80px;
+    /*padding-bottom: 80px;*/
 }
 
 .product.card .card-image {

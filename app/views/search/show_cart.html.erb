@@ -14,7 +14,7 @@
           <tr>
             <td><%= @catalog.title %></td>
             <td><%= @catalog.price %></td>
-            <td><<%= @catalog.quantity %></td>
+            <td><%= @catalog.quantity %></td>
           </tr>
 	        </tbody>
 	      </table>
@@ -28,7 +28,7 @@
 	    <% end %>
       <div class="card-panel hoverable">
         <div class='wellwisher_details'>
-          <div class='title center'>Wellwisher Details</div>
+          <h5 class='title center'>Wellwisher Details</h5>
           <%= hidden_field_tag :cat_id, @catalog.id %>
           <%= hidden_field_tag :contribution, @contribution %>
           <%= label_tag :name %>

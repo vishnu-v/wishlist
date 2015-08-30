@@ -14,11 +14,17 @@
     <img class="activator" src="/images/p/<%= product.image_urls %>" width="300px" height="300px">
   </div>
   <div class="desc card-content">
-    <span class="card-title activator grey-text text-darken-4"><%= product.title %><i class="material-icons right">more_vert</i></span>
+    <span class="card-title activator grey-text text-darken-4">
+      <%= product.title %>
+      <i class="material-icons right">more_vert</i>
+      <i class="material-icons right">comment</i>
+    </span>
+    <div>INR<h5 class="price"><%= product.price -%></h5></div>
   </div>
   <div class="card-reveal">
     <span class="card-title grey-text text-darken-4"><%= product.title %><i class="material-icons right">close</i></span>
     <p> <%= product.description %> </p>
+    <div class="fb-comments" data-href="http://<%= @site.name -%>.wishlist.dev" data-width="200" data-numposts="3"></div>
     <div class="status">
       <div class="ctbn-progress-bar">
         <div class="ctbn-percent-pledged" style="width: <%= product.contribution_percentage(@site.id) -%>%"></div> </div>
@@ -26,21 +32,23 @@
       <div class="ctbn-successful">
         <strong>Successfully funded!</strong>
       </div>
-      <ul class="ctbn-stats">
-        <li>
-        <div class="ctbn-stats-value">65%</div> <span class="ctbn-stats-label">funded</span>
-        </li>
-        <li>
-        <div class="ctbn-stats-value"><span class="money usd no-code">$49,329</span>
-        </div> <span class="ctbn-stats-label">required</span>
-        </li>
-        <li class="ksr_page_timer" data-end_time="2015-09-20T09:59:32-04:00">
-        <div class="ctbn-stats-value">
-          <div class="num">22</div>
-        </div>
-        <div class="ctbn-stats-label text" data-word="left">days to go</div>
-        </li>
-      </ul>
+      <% if product.effective_price != product.price %>
+        <ul class="ctbn-stats">
+          <li>
+          <div class="ctbn-stats-value"><%= product.contribution_percentage(@site.id) -%></div> <span class="ctbn-stats-label">funded</span>
+          </li>
+          <li>
+          <div class="ctbn-stats-value"><span class="money usd no-code"><%= product.price -%></span>
+          </div> <span class="ctbn-stats-label">required</span>
+          </li>
+          <li class="ksr_page_timer" data-end_time="2015-09-20T09:59:32-04:00">
+          <div class="ctbn-stats-value">
+            <div class="num">22</div>
+          </div>
+          <div class="ctbn-stats-label text" data-word="left">days to go</div>
+          </li>
+        </ul>
+      <% end %>
       <% end %>
     </div>
   </div>
