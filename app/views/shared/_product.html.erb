@@ -1,4 +1,14 @@
 <div class="product card medium">
+  <% if @site.root? %>
+  <ul class='wishlist'>
+    <li class='add right'>
+    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    </li>
+    <li class='added right hide'>
+    <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">done</i></a>
+    </li>
+  </ul>
+  <% end %>
   <div class="card-image waves-effect waves-block waves-light">
     <img class="activator" src="/images/p/<%= product.image_urls %>" width="300px" height="300px">
   </div>
@@ -24,11 +34,6 @@
         <div class="ctbn-stats-value"><span class="money usd no-code">$49,329</span>
         </div> <span class="ctbn-stats-label">required</span>
         </li>
-        <li>
-        <div class="ctbn-stats-value">Funded</div>
-        <span class="ctbn-stats-label">
-        </span>
-        </li>
         <li class="ksr_page_timer" data-end_time="2015-09-20T09:59:32-04:00">
         <div class="ctbn-stats-value">
           <div class="num">22</div>
@@ -38,12 +43,14 @@
       </ul>
     </div>
   </div>
+  <% unless @site.root? %>
   <div class="actions row">
   <% if product.available?(@site.id) %>
     <a class="btn waves-effect waves-light amber darken-3  col s6 contribte"><i class="material-icons left">playlist_add</i>Contribute</a>
     <a class="btn waves-effect waves-light green col s6 buy"><i class="material-icons left">shopping_cart</i>Buy</a>
   <% else %>
-  <!--<a class="btn disabled col s12"><i class="material-icons left">shopping_cart</i> Already Purchased</a> -->
+  <a class="btn disabled col s12"><i class="material-icons left">shopping_cart</i> Already Purchased</a>
   <% end %>
   </div>
+  <% end %>
 </div>

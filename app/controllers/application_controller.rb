@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
- 
+  #
+  #
   def load_site
   	subdomains = request.subdomains
   	if subdomains.first

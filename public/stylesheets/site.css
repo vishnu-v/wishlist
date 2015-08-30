@@ -52,3 +52,53 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, header 
     max-width: 100%;
 }
 
+/*contributor styling*/
+
+.ctbn-percent-pledged {
+  background-color: #2BDE73;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.ctbn-progress-bar {
+    height: 8px;
+}
+
+.ctbn-stats {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: none;
+  justify-content: space-around;
+  margin-top:15px;
+}
+.ctbn-stats > li{
+  display: inline-block;
+  text-align:center;
+}
+.ctbn-stats .ctbn-stats-label {
+  color:grey;
+  font-size:small;
+}
+
+.ctbn-stats .ctbn-stats-value {
+  font-weight:bold;
+}
+
+/*wishlist styling*/
+.product .wishlist .add {
+  visibility:hidden;
+}
+.product:hover .wishlist .add {
+  visibility:visible;
+}
+
+/*
+.search-wrapper{
+  position:absolute;
+  right:0;
+  z-index: 99999;
+}
+*/
+.search-wrapper label[for='search']{
+  top: 48px;
+}
