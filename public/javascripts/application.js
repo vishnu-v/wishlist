@@ -38,4 +38,7 @@ $(function(){
     //$('#cat_ids').attr('value', ids.join(','));
   return true;
   });
+  if($.cookies.get('msg') !== null){
+    Materialize.toast($.cookies.get('msg'), 5000);
+  }
 });

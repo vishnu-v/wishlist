@@ -53,6 +53,7 @@ class SearchController < ApplicationController
     cat_id = params[:cat_id]
     contribution = params[:contribution]
     Order.place_order(@site.id,guest.id,cat_id,amount,contribution,message,address)    
+    cookies[:msg] = "Your blessings will be delivered. Thank you."
     redirect_to :action => :show
   end
 
