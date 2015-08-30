@@ -24,7 +24,6 @@ class SearchController < ApplicationController
     name = params[:name]
     shipping_address = params[:address]
     Site.create({:name => name,:shipping_address => shipping_address})
-    clone_selected_catalog
   end
 
   def show_cart
@@ -52,13 +51,5 @@ class SearchController < ApplicationController
     redirect_to :action => :show
   end
 
-  private
-
-   def clone_selected_catalog
-     catalog = SiteCatalog.find :conditions => ["catalog_id in ? and site_id in ?",  params[:catalog_ids], 1]
-     cloned_catalog = catalog.clone
-     cloned_catalog.update_attribute :site_id, @site.id
-     cloned_catalog.touch
-   end
 
 end
