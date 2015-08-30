@@ -1,5 +1,6 @@
 <div class="facets">
 	<div class="facets-product-category">
+	<a href="/"><h6> Home </h6></a>
 		<% @categories.sort_by{|c| c.name}.each do |c|%>
 			<a href="/search/show/<%= c.id %>"><%= c.name %></a>
 			</br>
