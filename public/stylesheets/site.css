@@ -26,3 +26,29 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, header 
   top: 3rem;
 }
 }
+
+/* product box styling */
+
+.actions {
+    margin-bottom: 0;
+}
+.product {
+    position: relative;
+}
+.actions {
+    margin: 0;
+}
+.product.card .card-content,
+.product.card .card-reveal {
+    padding-bottom: 80px;
+}
+
+.product.card .card-image {
+    text-align: center;
+}
+
+.product.card .card-image img.activator {
+    width: auto;
+    max-width: 100%;
+}
+
