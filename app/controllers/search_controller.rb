@@ -1,9 +1,14 @@
 class SearchController < ApplicationController
   def show
-    if (category_id = params[:product_category_id])
-      @catalogs = @site.catalogs.catagory_id_eq(category_id)
+    if (category_id = params[:id]).present?
+      @catalogs = @site.catalogs.select{|c| c.product_category_id == params[:id].to_i}
     else
       @catalogs = @site.catalogs
+    end
+    min = params[:min] || nil
+    max = params[:max] || nil
+    if min && max && (min = min.to_i) <= (max = max.to_i)
+      @catalogs = @catalogs.select{|c| c.price >= min && c.price <= max}
     end
   end
 

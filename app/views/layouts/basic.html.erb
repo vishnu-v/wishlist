@@ -54,7 +54,10 @@
 <main>
 <%= render :partial => 'shared/parallax' if @site.root? && is_home_page? %>
 <div id="content" class='row'>
-  <div class='col s12 m12 l12'>
+  <div class='col m2'>
+    <%= render :partial => 'shared/facets' %>
+  </div>
+  <div class='col m10'>
     <%= yield %>
   </div>
   <%= render :partial => 'shared/site_creation_form' if @site.root? %>

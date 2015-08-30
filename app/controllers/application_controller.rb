@@ -3,6 +3,7 @@
 
 class ApplicationController < ActionController::Base
   before_filter :load_site
+  before_filter :load_categories
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
@@ -19,5 +20,9 @@ class ApplicationController < ActionController::Base
   	else
   		@site = Site.find_by_name "root"
   	end
+  end
+
+  def load_categories
+    @categories = ProductCategory.all
   end
 end
