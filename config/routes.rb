@@ -31,11 +31,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-   map.root :controller => :search, :collection => {
-    :create_site => :get, 
-    :show => :get,
-    :show_cart => :get
-  }
+   map.root :controller => :search, :action => :show
 
   # See how all your routes lay out with "rake routes"
 
