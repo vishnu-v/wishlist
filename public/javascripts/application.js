@@ -18,8 +18,14 @@ $(function(){
   .on('click', '.product .actions > .contribute', function(){
     confirm('Sure to contribute $1000?');
   })
-  .on('click', '.product .actions > .buy', function(){
-    alert('Item bought');
+  .on('click', '.product .actions > .buy, .product .actions > .contribute', function(e){
+    e.preventDefault();
+    $('#cart').openModal();
+    var href = $(this).attr('href');
+    $.get(href).done(function(data){
+      $('#cart').find('.modal-content').html(data);
+      console.log(data);
+    });
   });
   $('.button-collapse').sideNav({menuWidth: 200});
   $('.modal-trigger').leanModal();

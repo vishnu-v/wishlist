@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   #protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  layout 'basic'
+  layout proc { |c| c.request.xhr? ? 'xhr' : 'basic' }
+
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password

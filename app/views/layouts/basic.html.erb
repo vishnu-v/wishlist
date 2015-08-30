@@ -56,8 +56,20 @@
   <% if @site.root? && is_home_page? %>
     <%= render :partial => 'shared/parallax' %>
     <%= render :partial => 'shared/site_creation_form' %>
-  <% elsif !@site.root? && is_home_page?  %>
-    <%= render :partial => 'shared/site_parallax' %>
+  <% else  %>
+    <% if is_home_page?  %>
+      <%= render :partial => 'shared/site_parallax' %>
+    <% end %>
+  <!-- Modal Trigger -->
+  <a class="modal-trigger waves-effect waves-light btn hide" href="#cart">Modal</a>
+  <!-- Modal Structure -->
+  <div id="cart" class="modal modal-fixed-footer white black-text">
+    <div class="modal-content">
+      <h4>Shopping Cart</h4>
+      <p>Loading your cart...</p>
+    </div>
+  </div>
+
   <% end %>
   <div class='col m2'>
     <%= render :key => "value", :partial => 'shared/facets' %>

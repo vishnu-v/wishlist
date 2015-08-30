@@ -1,7 +1,7 @@
 <% if @catalog %>
-	<div class='title'>Place your order</div>
+	<h5 class='title center'>Place your order</h5>
 	<% form_tag url_for(:action => :buy_catalog) do %>
-		<div class='list-items-wrapper'>
+		<div class='list-items-wrapper card-panel '>
 	      <table>
 	        <thead>
 	          <tr>
@@ -26,24 +26,32 @@
 	    <% else %>
 	    	<%= hidden_field_tag :amount, @catalog.price %>
 	    <% end %>
-	    <div class='wellwisher_details'>
-	    <div class='title'>Wellwisher Details</div>
-	    <%= hidden_field_tag :cat_id, @catalog.id %>
-	    <%= hidden_field_tag :contribution, @contribution %>
-	    <%= label_tag :name %>
-	    <%= text_field_tag :name %>
-	    <%= label_tag :contact %>
-	    <%= text_field_tag :contact %>
-	    <%= label_tag :address %>
-	    <%= text_area_tag :address %>
-	    <%= label_tag :message %>
-	    <%= text_area_tag :message %>
-	    <%= submit_tag "Place order", :class => 'place_order_button' %>
+      <div class="card-panel hoverable">
+        <div class='wellwisher_details'>
+          <div class='title center'>Wellwisher Details</div>
+          <%= hidden_field_tag :cat_id, @catalog.id %>
+          <%= hidden_field_tag :contribution, @contribution %>
+          <%= label_tag :name %>
+          <%= text_field_tag :name %>
+          <%= label_tag :contact %>
+          <%= text_field_tag :contact %>
+          <%= label_tag :address %>
+          <%= text_area_tag :address %>
+          <%= label_tag :message %>
+          <%= text_area_tag :message %>
+          <%= submit_tag "Place order", :class => 'place_order_button' %>
 
-	    </div>
+        </div>
+      </div>
 	<% end %>
 <% else %>
 	<span class="continue_shopping">
 		Continue Shopping
 	</span>
 <% end %>
+
+<style>
+header, footer{
+  display:none !important;
+'}
+</style>
