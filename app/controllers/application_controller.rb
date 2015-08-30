@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_site
   before_filter :load_categories
   helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  #protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   layout 'basic'
 

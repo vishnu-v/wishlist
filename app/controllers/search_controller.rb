@@ -13,8 +13,11 @@ class SearchController < ApplicationController
   end
 
   def add_catalogs
-    cat_ids = params[:cat_ids].split(',')
-    Catalog.add_catalogs(cat_ids,@site.id)
+    cat_ids = params[:cat_ids]
+    SiteCatalog.add_catalogs(cat_ids, params[:site_id])
+    site = Site.find(params[:site_id])
+    cookies[:site_id] = nil
+    redirect_to  "http://#{site.name}.wishlist.dev"
   end
 
   def remove_catalog
@@ -23,7 +26,9 @@ class SearchController < ApplicationController
   def create_site
     name = params[:name]
     shipping_address = params[:address]
-    Site.create({:name => name,:shipping_address => shipping_address})
+    site = Site.create({:name => name,:shipping_address => shipping_address})
+    cookies[:site] = { :value => site.id, :expires =>  1.year.from_now }
+    redirect_to :controller => :search, :action => :show
   end
 
   def show_cart

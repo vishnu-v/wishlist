@@ -4,9 +4,7 @@ class Catalog < ActiveRecord::Base
 	has_many :contributions
 
 	def self.add_catalogs(cat_ids,site_id)
-		cat_ids.split(',').each do |cat_id|
-			SiteCatalog.add_catalogs(site_id,cat_id)
-		end
+    SiteCatalog.add_catalogs(cat_ids, site_id)
 	end
 
 	def contribute(site_id,guest_id,amount,message)

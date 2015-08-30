@@ -52,15 +52,16 @@
   </nav>
 </header>
 <main>
-<%= render :partial => 'shared/parallax' if @site.root? && is_home_page? %>
 <div id="content" class='row'>
-  <div class='col m2'>
+  <div class='col m2 hide'>
     <%= render :partial => 'shared/facets' %>
   </div>
-  <div class='col m10'>
-    <%= yield %>
-  </div>
-  <%= render :partial => 'shared/site_creation_form' if @site.root? %>
+  <div class='col s12 m12 l12'>
+  <% if @site.root? && is_home_page? %>
+    <%= render :partial => 'shared/parallax' %>
+    <%= render :partial => 'shared/site_creation_form' %>
+  <% end %>
+  <%= yield %>
 </div>
 </main>
 
@@ -102,8 +103,10 @@
 
 <script src="/javascripts/jquery-2.1.1.min.js"></script>
 <script src="/javascripts/materialize.js"></script>
-<script src="/javascripts/slick.min.js"></script>
+<!-- <script src="/javascripts/slick.min.js"></script> -->
+<script src="/javascripts/jquery.cookies.2.2.0.min.js "></script>
 <%= javascript_include_tag 'application' %>
+<%= yield :javascripts %>
 </body>
 </html>
 

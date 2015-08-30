@@ -4,8 +4,8 @@ class SiteCatalog < ActiveRecord::Base
 
     def self.add_catalogs(cat_ids,site_id)
         condition = []
-        cat_ids.split(",").each do |cid|
-            condition << "(#{site_id},#{cid},false)"
+        cat_ids.split(",").each do |cid| 
+          condition << "(#{site_id},#{cid},false)"
         end
         condition = condition.join(",")
         ActiveRecord::Base.connection.execute("INSERT INTO site_catalogs(site_id,catalog_id,purchased) VALUES " + condition)
