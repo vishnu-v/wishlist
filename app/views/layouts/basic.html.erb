@@ -60,6 +60,8 @@
   <% if @site.root? && is_home_page? %>
     <%= render :partial => 'shared/parallax' %>
     <%= render :partial => 'shared/site_creation_form' %>
+  <% elsif !@site.root? && is_home_page?  %>
+    <%= render :partial => 'shared/site_parallax' %>
   <% end %>
   <%= yield %>
 </div>

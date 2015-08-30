@@ -47,8 +47,8 @@
   <% unless @site.root? %>
   <div class="actions row">
   <% if product.available?(@site.id) %>
-    <a class="left btn waves-effect waves-light amber darken-3  col s6 contribte"><i class="material-icons left">playlist_add</i>Contribute</a>
-    <a class="right btn waves-effect waves-light green col s6 buy"><i class="material-icons left">shopping_cart</i>Buy</a>
+    <a class="left btn waves-effect waves-light amber darken-3  col s6 contribte" href='/search/show_cart?catalog_id=<%= product.id %>&contribution=true'><i class="material-icons left">playlist_add</i>Contribute</a>
+    <a class="right btn waves-effect waves-light green col s6 buy" href='/search/show_cart?catalog_id=<%= product.id %>&contribution=false'><i class="material-icons left">shopping_cart</i>Buy</a>
   <% else %>
   <a class="btn disabled col s12"><i class="material-icons left">shopping_cart</i> Already Purchased</a>
   <% end %>

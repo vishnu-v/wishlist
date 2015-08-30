@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150829133647) do
+ActiveRecord::Schema.define(:version => 20150830032817) do
 
   create_table "catalogs", :force => true do |t|
     t.string   "title"
@@ -20,16 +20,13 @@ ActiveRecord::Schema.define(:version => 20150829133647) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "product_category_id"
+    t.string   "image_urls"
   end
 
   create_table "contributions", :force => true do |t|
-    t.integer  "guest_id"
-    t.string   "message"
-    t.integer  "amount",     :limit => 10, :precision => 10, :scale => 0
-    t.integer  "site_id"
-    t.integer  "catalog_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "catalog_id"
   end
 
   create_table "guests", :force => true do |t|
@@ -45,8 +42,16 @@ ActiveRecord::Schema.define(:version => 20150829133647) do
     t.string   "shipping_address"
     t.integer  "price"
     t.integer  "guest_id"
-    t.integer  "cat_id"
     t.integer  "site_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status"
+    t.integer  "catalog_id"
+    t.text     "contributors"
+  end
+
+  create_table "product_categories", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,20 +63,20 @@ ActiveRecord::Schema.define(:version => 20150829133647) do
   end
 
   create_table "site_catalogs", :force => true do |t|
-    t.integer  "cat_id"
     t.integer  "site_id"
     t.boolean  "purchased"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "catalog_id"
   end
 
   create_table "sites", :force => true do |t|
     t.string   "name"
     t.string   "shipping_address"
-    t.string   "owner_name"
-    t.string   "contact"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "owner_id"
+    t.string   "theme"
   end
 
   create_table "vendors", :force => true do |t|
