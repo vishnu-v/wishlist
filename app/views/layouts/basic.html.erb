@@ -53,17 +53,18 @@
 </header>
 <main>
 <div id="content" class='row'>
-  <div class='col m2 hide'>
-    <%= render :key => "value", :partial => 'shared/facets' %>
-  </div>
-  <div class='col s12 m12 l12'>
   <% if @site.root? && is_home_page? %>
     <%= render :partial => 'shared/parallax' %>
     <%= render :partial => 'shared/site_creation_form' %>
   <% elsif !@site.root? && is_home_page?  %>
     <%= render :partial => 'shared/site_parallax' %>
   <% end %>
-  <%= yield %>
+  <div class='col m2'>
+    <%= render :key => "value", :partial => 'shared/facets' %>
+  </div>
+  <div class="col m10">
+    <%= yield %>
+  </div>
 </div>
 </main>
 
@@ -72,7 +73,7 @@
     <div class="row">
       <div class="col l6 s12">
         <h5 class="white-text">WishList</h5>
-        <p class="grey-text text-lighten-4">Streamling the wedding process!!!</p>
+        <p class="grey-text text-lighten-4">Streamling the wedding process.</p>
 
 
       </div>

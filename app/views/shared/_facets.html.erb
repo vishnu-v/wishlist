@@ -1,21 +1,31 @@
 <div class="facets">
-	<div class="facets-product-category">
-	<a href="/"><h6> Home </h6></a>
+	<div class="facets-product-category collection with-header">
+	<div class="title collection-header">Categories</div>
+	<a class="collection-item" href="/"><h6> Home </h6></a>
 		<% @categories.sort_by{|c| c.name}.each do |c|%>
-			<a href="/search/show/<%= c.id %>"><%= c.name %></a>
-			</br>
+			<a class="collection-item" href="/search/show/<%= c.id %>"><%= c.name %></a>
 		<% end%>
 	</div>
-
+	<br/>
 	<div class="facets-price">
+		<div class='title'>Price Range</div>
+		<br/>
 		<% form_tag url_for(:action => :show) do %>
 		<%= hidden_field_tag :id, params[:id] %>
 	    <%= label_tag :min %>
 	    <%= text_field_tag :min %>
 	    <%= label_tag :max %>
 	    <%= text_field_tag :max %>
-	    <%= submit_tag "Filter", :class => 'filter_button' %>
+	    <%= submit_tag "Filter", :class => 'btn' %>
 		<% end%>
 	</div>
 </div>
 
+<style>
+.facets a.collection-item {
+    padding: 3px;
+}
+.facets-price input.btn {
+    margin-left: 37px;
+}
+</style>
