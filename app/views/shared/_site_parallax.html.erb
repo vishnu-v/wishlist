@@ -1,6 +1,22 @@
-<div class='share-wrapper'><div class="fb-like" data-href="http://#{@site.name}.wishlist.dev" data-width="300" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-</div><div class="parallax-container">
-  <div class="parallax"><img src="images/site.jpg"></div>
+<div class='share-wrapper'>
+  <div class="fb-like" data-href="http://<%=@site.name -%>.wishlist.dev" data-width="301" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+</div>
+<div class='home-wrapper'>
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="images/site.jpg">
+    </div>
+  </div>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br>
+      <br>
+      <h1 class="header center purple-text"><%= @site.name.capitalize -%></h1>
+      <div class="row center">
+        <h5 class="header col s12 light teal-text">When life gave us lemons, we decided to get married</h5>
+      </div>
+    </div>
+  </div>
 </div>
 <style>
 .share-wrapper{
@@ -8,5 +24,16 @@
   right:10px;
   top:400px;
   z-index: 9999;
+  width: 300px;
+}
+.home-wrapper{
+position: relative;
+}
+.home-wrapper #index-banner{
+  position:absolute;
+  top:0;
+  width: 100%;
+  font-weight: bold;
+  color: #FFF;
 }
 </style>

@@ -102,3 +102,32 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, header 
 .search-wrapper label[for='search']{
   top: 48px;
 }
+/* fb styling */
+
+.fb-comments.fb_iframe_widget {
+    width: 300px;
+}
+
+.fb_iframe_widget span {
+    width: 100% !important;
+}
+
+.fb_iframe_widget iframe {
+  max-width: 100% !important;
+  width: 300px !important;
+}
+
+
+.share-wrapper .fb-like.fb_iframe_widget {
+    width: 100% !important;
+}
+
+.share-wrapper .fb-like.fb_iframe_widget span {
+    width:300px !important;    
+    height: 50px !important;
+}
+
+.share-wrapper .fb-like.fb_iframe_widget >span >iframe{
+    height:50px !important;
+}
+

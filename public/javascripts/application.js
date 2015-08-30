@@ -39,6 +39,7 @@ $(function(){
   return true;
   });
   if($.cookies.get('msg') !== null){
-    Materialize.toast($.cookies.get('msg'), 5000);
+    Materialize.toast($.cookies.get('msg').replace(/\+/g, ' '), 5000);
+    $.cookies.set('msg', null)
   }
 });

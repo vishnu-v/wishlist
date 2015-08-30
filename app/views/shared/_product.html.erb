@@ -24,7 +24,7 @@
   <div class="card-reveal">
     <span class="card-title grey-text text-darken-4"><%= product.title %><i class="material-icons right">close</i></span>
     <p> <%= product.description %> </p>
-    <div class="fb-comments" data-href="http://<%= @site.name -%>.wishlist.dev" data-width="200" data-numposts="3"></div>
+    <div class="fb-comments" data-href="http://<%= @site.name -%>.wishlist.dev" data-width="300" data-numposts="3"></div>
     <div class="status">
       <div class="ctbn-progress-bar">
         <div class="ctbn-percent-pledged" style="width: <%= product.contribution_percentage(@site.id) -%>%"></div> </div>
