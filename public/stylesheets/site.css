@@ -131,3 +131,6 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i, header 
     height:50px !important;
 }
 
+.move-up{
+    margin-top: -170px;
+}

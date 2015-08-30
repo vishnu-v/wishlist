@@ -72,7 +72,7 @@
 
   <% end %>
   <div class='col m2'>
-    <%= render :key => "value", :partial => 'shared/facets' %>
+    <%= render :key => "value", :partial => 'shared/facets' if !@site.root? && is_home_page?%>
   </div>
   <div class="col m10">
     <%= yield %>

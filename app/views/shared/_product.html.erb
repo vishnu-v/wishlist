@@ -32,7 +32,7 @@
       <div class="ctbn-successful">
         <strong>Successfully funded!</strong>
       </div>
-      <% if product.effective_price != product.price %>
+      <% if product.effective_price(@site.id) != product.price %>
         <ul class="ctbn-stats">
           <li>
           <div class="ctbn-stats-value"><%= product.contribution_percentage(@site.id) -%></div> <span class="ctbn-stats-label">funded</span>
